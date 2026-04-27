@@ -1,1 +1,5 @@
-
+test_status_200
+test_json_format
+test_field_value_exists
+test_value_is_integer
+test_response_time_ok
