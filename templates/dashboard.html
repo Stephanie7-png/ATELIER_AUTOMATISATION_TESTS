@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Tests API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f4f6f8;
+        }
 
+        h1 {
+            color: #1f2937;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 12px 18px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #1f2937;
+            color: white;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Dashboard Testing as Code - CountAPI</h1>
+
+<p>API testée : <strong>https://api.countapi.xyz</strong></p>
+
+<a class="btn" href="/run">Lancer les tests</a>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Total</th>
+        <th>Réussis</th>
+        <th>Échoués</th>
+        <th>Taux réussite</th>
+        <th>Latence moyenne</th>
+        <th>P95</th>
+    </tr>
+
+    {% for run in runs %}
+    <tr>
+        <td>{{ run[0] }}</td>
+        <td>{{ run[1] }}</td>
+        <td>{{ run[2] }}</td>
+        <td class="success">{{ run[3] }}</td>
+        <td class="fail">{{ run[4] }}</td>
+        <td>{{ run[5] }}%</td>
+        <td>{{ run[6] }} ms</td>
+        <td>{{ run[7] }} ms</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
