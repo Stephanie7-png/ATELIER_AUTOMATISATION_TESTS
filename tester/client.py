@@ -1,9 +1,9 @@
 import time
 import requests
 
-BASE_URL = "https://api.countapi.xyz"
+BASE_URL = "https://api.ipify.org"
 
-def get_json(endpoint, timeout=3, retry=1):
+def get_json(endpoint="", timeout=5, retry=1):
     url = BASE_URL + endpoint
 
     for attempt in range(retry + 1):
@@ -15,7 +15,7 @@ def get_json(endpoint, timeout=3, retry=1):
 
             try:
                 json_data = response.json()
-            except ValueError:
+            except:
                 json_data = None
 
             return {
