@@ -1,13 +1,25 @@
 # API Choice
 
-- Étudiant :
-- API choisie :
-- URL base :
-- Documentation officielle / README :
-- Auth : None / API Key / OAuth
+- Étudiant : stephanie kanga makeu
+- API choisie : CountAPI
+- URL base : https://api.countapi.xyz/hit/demo/key
+- Documentation officielle / README : https://countapi.xyz
+- Auth : None 
 - Endpoints testés :
-  - GET ...
-  - GET ...
+  - GET https://api.countapi.xyz/hit/demo/key
+  - GET https://api.countapi.xyz/get/demo/key
 - Hypothèses de contrat (champs attendus, types, codes) :
+  - Code HTTP attendu : 200
+  - Format attendu : JSON
+  - Champ attendu : value
+  - Type attendu : number / integer
+  - Le endpoint /hit incrémente le compteur
+  - Le endpoint /get retourne la valeur actuelle du compteur
 - Limites / rate limiting connu :
+  - Aucun rate limiting clairement documenté
+  - Tests limités à un rythme raisonnable pour ne pas surcharger l’API
 - Risques (instabilité, downtime, CORS, etc.) :
+  - API publique gratuite donc risque d’instabilité
+  - Possible indisponibilité temporaire
+  - Possible limitation si trop de requêtes
+  - Le endpoint /hit modifie la valeur du compteur, donc il faut éviter de lancer trop de tests
